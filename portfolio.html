@@ -1,0 +1,530 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional Portfolio - Client Ready Developer Portfolio" />
+  <title>Client Ready Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --bg:#060b18;
+      --card:rgba(255,255,255,0.06);
+      --text:#ffffff;
+      --muted:#9ca3af;
+      --primary:#6366f1;
+      --accent:#22c55e;
+      --danger:#ef4444;
+      --glow:0 0 25px rgba(99,102,241,0.6);
+    }
+
+    body.light{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#4f46e5;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    /* NAV */
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      padding:15px 25px;
+      backdrop-filter:blur(15px);
+      background:rgba(0,0,0,0.4);
+      z-index:100;
+    }
+
+    nav a{
+      color:var(--text);
+      margin:0 10px;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    nav a:hover{color:var(--primary)}
+
+    header{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    header h1{font-size:65px;}
+
+    .typing{
+      color:var(--muted);
+      margin-top:10px;
+      font-size:18px;
+      height:25px;
+    }
+
+    .btn{
+      margin-top:20px;
+      padding:12px 20px;
+      background:var(--primary);
+      border-radius:10px;
+      color:white;
+      text-decoration:none;
+      display:inline-block;
+      transition:0.3s;
+    }
+
+    .btn:hover{transform:scale(1.05)}
+
+    section{
+      max-width:1100px;
+      margin:80px auto;
+      padding:0 20px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:25px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+      transition:0.3s;
+    }
+
+    .card:hover{transform:translateY(-8px)}
+
+    h2{margin-bottom:15px}
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:15px;
+    }
+
+    .project{
+      padding:15px;
+      border-radius:12px;
+      background:#0b1220;
+      border:1px solid #1f2937;
+    }
+
+    /* FORM */
+    input,textarea{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      border-radius:8px;
+      border:none;
+      outline:none;
+    }
+
+    textarea{height:120px}
+
+    .error{
+      color:var(--danger);
+      font-size:13px;
+      margin-top:5px;
+    }
+
+    .success{
+      color:var(--accent);
+      font-size:14px;
+      margin-top:10px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonial{
+      padding:15px;
+      border-left:3px solid var(--primary);
+      margin-top:10px;
+      background:rgba(255,255,255,0.03);
+      border-radius:8px;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:var(--muted);
+    }
+
+    .toggle{
+      position:fixed;
+      top:15px;
+      right:15px;
+      background:var(--primary);
+      border:none;
+      padding:10px;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button class="toggle" onclick="toggleMode()">Mode</button>
+
+<nav>
+  <div><b>DevPortfolio</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <h1>I'm Professional Developer</h1>
+  <div class="typing" id="typing"></div>
+  <a class="btn" href="#contact">Hire Me</a>
+</header>
+
+<section id="about">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>I build production-ready, scalable and high performance web applications for clients worldwide with clean UI and modern architecture.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="card">
+    <h2>Skills</h2>
+    <p>HTML, CSS, JavaScript, React, Laravel, Node.js, Tailwind, API Integration</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="card">
+    <h2>Client Projects</h2>
+    <div class="grid">
+      <div class="project">E-Commerce Platform (Live)</div>
+      <div class="project">CRM Dashboard System</div>
+      <div class="project">Booking System App</div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="card">
+    <h2>Client Reviews</h2>
+    <div class="testimonial">"Excellent work, delivered on time!" - Client A</div>
+    <div class="testimonial">"Very professional and clean code." - Client B</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <input id="name" placeholder="Name" />
+    <div id="nameErr" class="error"></div>
+
+    <input id="email" placeholder="Email" />
+    <div id="emailErr" class="error"></div>
+
+    <textarea id="msg" placeholder="Message"></textarea>
+    <div id="msgErr" class="error"></div>
+
+    <a class="btn" onclick="submitForm()">Send Message</a>
+    <div id="success" class="success"></div>
+  </div>
+</section>
+
+<footer>© 2026 Client Ready Portfolio</footer>
+
+<script>
+const roles=["Freelancer","Full Stack Dev","UI Expert","Laravel Specialist"];
+let i=0,j=0,text="";
+
+function type(){
+  if(j<roles[i].length){
+    text+=roles[i][j++];
+    document.getElementById("typing").innerText=text;
+    setTimeout(type,80);
+  }else{
+    setTimeout(()=>{text="";j=0;i=(i+1)%roles.length;type();},1000);
+  }
+}
+type();
+
+function toggleMode(){document.body.classList.toggle("light");}
+
+function submitForm(){
+  let n=document.getElementById("name").value;
+  let e=document.getElementById("email").value;
+  let m=document.getElementById("msg").value;
+
+  let ok=true;
+
+  if(n.length<3){document.getElementById("nameErr").innerText="Enter valid name";ok=false;}
+  else document.getElementById("nameErr").innerText="";
+
+  if(!e.includes("@")){document.getElementById("emailErr").innerText="Invalid email";ok=false;}
+  else document.getElementById("emailErr").innerText="";
+
+  if(m.length<10){document.getElementById("msgErr").innerText="Message too short";ok=false;}
+  else document.getElementById("msgErr").innerText="";
+
+  if(ok){
+    document.getElementById("success").innerText="Message sent successfully 🚀";
+  }
+}
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ronak Saksena Portfolio</title>
+
+  <meta name="description" content="Ultimate world-class developer portfolio with 3D visuals and premium animations" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;scroll-behavior:smooth}
+
+    :root{
+      --bg:#050816;
+      --text:#fff;
+      --muted:#9ca3af;
+      --primary:#8b5cf6;
+      --glow:0 0 40px rgba(139,92,246,0.7);
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    canvas{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+    }
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      padding:15px 25px;
+      backdrop-filter:blur(20px);
+      background:rgba(0,0,0,.35);
+      z-index:100;
+    }
+
+    nav a{
+      color:var(--text);
+      margin:0 10px;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    nav a:hover{color:var(--primary)}
+
+    header{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:80px;
+      text-shadow:var(--glow);
+    }
+
+    .typing{
+      margin-top:10px;
+      color:var(--muted);
+      height:25px;
+    }
+
+    .btn{
+      margin-top:20px;
+      padding:12px 20px;
+      background:var(--primary);
+      border-radius:12px;
+      color:#fff;
+      text-decoration:none;
+      box-shadow:var(--glow);
+      display:inline-block;
+    }
+
+    section{
+      max-width:1100px;
+      margin:100px auto;
+      padding:0 20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.06);
+      padding:25px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.1);
+      backdrop-filter:blur(15px);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:15px;
+    }
+
+    .project{
+      padding:18px;
+      border-radius:14px;
+      background:#0b1220;
+      border:1px solid #1f2937;
+      transition:.3s;
+    }
+
+    .project:hover{transform:scale(1.07)}
+
+    input,textarea{
+      width:100%;padding:12px;margin-top:10px;border-radius:10px;border:none;outline:none
+    }
+
+    textarea{height:120px}
+
+    footer{text-align:center;padding:40px;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<nav>
+  <div><b>I'm  Ronak</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <h1>I'm Full Stack Devloper</h1>
+  <div class="typing" id="typing"></div>
+  <a class="btn" href="mailto:ronak.corextime@gmail.com">Hire Me</a>
+  <a class="btn" href="#projects">View Work</a>
+</header>
+
+<section id="about" class="card reveal">
+  <h2>About</h2><br>
+  <p>I am a passionate Full Stack Developer with experience in building responsive, user-friendly, and high-performance web applications. I specialize in both frontend and backend development, turning ideas into complete digital solutions.</p>
+
+</section>
+
+<section id="skills" class="card reveal">
+  <h2>Skills</h2>
+  <p>Frontend • Backend • System Design • API • UI/UX • Cloud Architecture</p>
+</section>
+
+<section id="projects" class="card reveal">
+  <h2>Projects</h2><br>
+  <div class="grid">
+    <div class="project">Shopping System</div>
+    <div class="project">Trading Dashboard</div>
+    <div class="project">Global CRM System</div>
+    <div class="project">Ecommers website</div>
+    <div class="project">Real Estate</div>
+    <div class="project">Business Landing Page</div>
+  </div>
+</section>
+
+<section id="contact" class="card reveal">
+  <h2>Contact</h2>
+  <input placeholder="Name" />
+  <input placeholder="Email" />
+  <textarea placeholder="Message"></textarea>
+  <a class="btn" href="mailto:youremail@gmail.com">Send Email</a>
+  <a class="btn" href="resume.pdf" download>Download Resume</a>
+</section>
+
+<footer>© 2026 Roank Saksena Portfolio</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+
+// typing
+const roles=["Full Stack Developer","System Architect","AI Builder","Laravel Developer ","SaaS Engineer","Databse Management"];
+let i=0,j=0,t="";
+function type(){
+  if(j<roles[i].length){t+=roles[i][j++];document.getElementById("typing").innerText=t;setTimeout(type,60)}
+  else{setTimeout(()=>{t="";j=0;i=(i+1)%roles.length;type()},1000)}
+}
+type();
+
+// THREE JS BACKGROUND
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('bg'),alpha:true});
+renderer.setSize(innerWidth,innerHeight);
+
+const geometry=new THREE.TorusGeometry(10,3,16,100);
+const material=new THREE.MeshBasicMaterial({color:0x8b5cf6,wireframe:true});
+const torus=new THREE.Mesh(geometry,material);
+scene.add(torus);
+camera.position.z=30;
+
+function animate(){
+  requestAnimationFrame(animate);
+  torus.rotation.x+=0.005;
+  torus.rotation.y+=0.01;
+  renderer.render(scene,camera);
+}
+animate();
+
+// GSAP SCROLL
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.from(el,{
+    opacity:0,
+    y:50,
+    duration:1,
+    scrollTrigger:{trigger:el,start:"top 80%"}
+  })
+});
+
+</script>
+
+</body>
+</html>
+
